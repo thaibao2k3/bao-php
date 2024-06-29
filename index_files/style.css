@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+#container{
+    position: relative;
+    width: 1200px;
+    height: auto;
+    margin: 6px auto;
+}
+
+header {
+    width: 1200px;
+    height: 240px;
+    background-image: url('../img/banner.jpg');
+}
+
+.menu{
+    float: left;
+    width: 1200px;
+    height: 50px;
+    background-color: antiquewhite;
+    display: inline;
+    padding-top: 15px;
+}
+
+.menu a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+#search {
+    float: right;
+    padding-right: 25px;
+}
+
+
+.main{
+    float: left;
+    width: 1200px;
+    height: auto;
+    
+}
+
+
+.left{
+    float: left;
+    width: 300px;
+    
+}
+
+#loaisp li {
+    list-style-type: none;
+    background-color: fuchsia;
+    margin: 20px;
+    width: 170px;
+    height: 30px;
+}
+
+.right{
+    float: left;
+    width: 900px;
+    height: auto;
+    border-left: solid 1px #000;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+td #sanpham{
+    margin: 5px;
+}
+
+#sanpham{
+    border: solid 1px #000;
+    margin: 5px;
+    padding: 5px;
+}
+
+#sanpham a{
+    text-decoration: none;
+    
+}
+
+#sanpham_ten{
+    text-align: center;
+    margin-top: 5px;
+}
+
+#sanpham_hinh{
+    text-align: center;
+    margin-top: 5px;
+}
+
+#sanpham_gia{
+    text-align: center;
+    color: red;
+}
+
+
+footer{
+    float: left;
+    width: 1200px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(245, 169, 245);
+}
+
+
+

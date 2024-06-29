@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://localhost:81/BTLWebSach/index.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Web SÁCH</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"></head><body><br>
+<link rel="stylesheet" type="text/css" href="./index_files/style.css">
+<style>
+    a {
+        margin-left: 10px;
+    } 
+    td:hover {
+        background-color: #fff;
+    }
+    td{
+        background-color: rgb(217, 241, 249);
+    }
+</style>
+
+
+    <div id="container">
+        <header>
+            
+        </header>
+        <section>
+            <div class="menu">
+                <a href="http://localhost:81/BTLWebSach/index.php?">Trang chủ</a>
+                <a href="http://localhost:81/BTLWebSach/admin.php">Quản Lý</a>|<a href="http://localhost:81/BTLWebSach/View/Login/dangxuat.php" onclick="return confirm(&#39;Are you sure to logout?&#39;)">Đăng xuất</a>                <div id="search">
+                    <form action="http://localhost:81/BTLWebSach/index.php#" method="get">
+                        <input type="text" name="txtTuKhoa">
+                        <input type="submit" name="txtTimKiem" value="TimKiem">
+                    </form>
+                </div>
+            </div>
+            <div class="main">
+                <article class="left">
+                    <ul><li id="loaisp"><a href="http://localhost:81/BTLWebSach/index.php?Lop=1">Lớp 1</a></li><li id="loaisp"><a href="http://localhost:81/BTLWebSach/index.php?Lop=2">Lớp 2</a></li><li id="loaisp"><a href="http://localhost:81/BTLWebSach/index.php?Lop=3">Lớp 3</a></li><li id="loaisp"><a href="http://localhost:81/BTLWebSach/index.php?Lop=4">Lớp 4</a></li><li id="loaisp"><a href="http://localhost:81/BTLWebSach/index.php?Lop=5">Lớp 5</a></li></ul>
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index_files/style(1).css">
+    <style>
+        li {
+            list-style-type: none;
+            background-color: #ff00ff47;
+            margin: 20px;
+            width: 170px;
+            height: 30px;
+        }
+        li:hover{
+            background-color: #7200ff8a;
+        }
+        li a {
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+            display: list-item;
+        }
+    </style>
+
+
+    
+
+                </article>
+                <div class="right">
+                    
+<!--
+    class clsUpload{
+        public function Upload($file,$filename,$hinh){
+            $size=$file["size"];
+            $ten=$file["name"];
+            $loai=$file["type"];
+            $temp=$file["tmp_name"];
+            if(!$this->checkSize($size)){
+                return false;
+            }
+            if(!$this->checkType($loai)){
+                return false;
+            }
+            $folder="img/";
+            $hinh=$this->changeName($filename);
+            $des=$folder.$hinh;
+            if(move_uploaded_file($temp,$des)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function checkSize($size){
+            if($size<3*1024*1024){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function checkType($type){
+            $arrType=array("img/jpeg","img/png","img/jpg");
+            if(in_array($type,$arrType)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function vn_arr($ten){
+            $unicode = array(
+                'a'=>'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ',
+                'd'=>'đ',                 
+                'e'=>'é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ',                 
+                'i'=>'í|ì|ỉ|ĩ|ị',                 
+                'o'=>'ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ',                
+                'u'=>'ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự',                
+                'y'=>'ý|ỳ|ỷ|ỹ|ỵ',                 
+                'A'=>'Á|À|Ả|Ã|Ạ|Ă|Ắ|Ặ|Ằ|Ẳ|Ẵ|Â|Ấ|Ầ|Ẩ|Ẫ|Ậ',                 
+                'D'=>'Đ',                
+                'E'=>'É|È|Ẻ|Ẽ|Ẹ|Ê|Ế|Ề|Ể|Ễ|Ệ',                 
+                'I'=>'Í|Ì|Ỉ|Ĩ|Ị',                 
+                'O'=>'Ó|Ò|Ỏ|Õ|Ọ|Ô|Ố|Ồ|Ổ|Ỗ|Ộ|Ơ|Ớ|Ờ|Ở|Ỡ|Ợ',                 
+                'U'=>'Ú|Ù|Ủ|Ũ|Ụ|Ư|Ứ|Ừ|Ử|Ữ|Ự',                
+                'Y'=>'Ý|Ỳ|Ỷ|Ỹ|Ỵ',                 
+                );                
+                foreach($unicode as $nonUnicode=>$uni){                 
+                $ten = preg_replace("/($uni)/i", $nonUnicode, $ten);                 
+                }
+                $ten = str_replace(' ','_',$ten);                 
+                return $ten;                 
+        }
+    }
+-->
+<table><tbody><tr width="750px"><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=2"><div id="sanpham_ten"><b>Toán 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh2.jpeg" width="100px" height="130px"><br></div><div id="sanpham_gia">26.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=3"><div id="sanpham_ten"><b>Đạo Đức 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh3.png" width="100px" height="130px"><br></div><div id="sanpham_gia">20.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=4"><div id="sanpham_ten"><b>Âm Nhạc 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh4.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">19.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=5"><div id="sanpham_ten"><b>Mỹ Thuật 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh5.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">24.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=6"><div id="sanpham_ten"><b>Tiếng Việt 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh6.png" width="100px" height="130px"><br></div><div id="sanpham_gia">32.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=7"><div id="sanpham_ten"><b>Toán 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh7.png" width="100px" height="130px"><br></div><div id="sanpham_gia">27.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=8"><div id="sanpham_ten"><b>Đạo Đức 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh8.png" width="100px" height="130px"><br></div><div id="sanpham_gia">18.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=9"><div id="sanpham_ten"><b>Âm Nhạc 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh9.png" width="100px" height="130px"><br></div><div id="sanpham_gia">20.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=10"><div id="sanpham_ten"><b>Mỹ Thuật 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh10.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">28.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=11"><div id="sanpham_ten"><b>Tiếng Việt 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh11.png" width="100px" height="130px"><br></div><div id="sanpham_gia">36.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=12"><div id="sanpham_ten"><b>Toán 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh12.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">31.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=13"><div id="sanpham_ten"><b>Đạo Đức 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh13.png" width="100px" height="130px"><br></div><div id="sanpham_gia">27.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=14"><div id="sanpham_ten"><b>Âm Nhạc 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh14.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=15"><div id="sanpham_ten"><b>Mỹ Thuật 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh15.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">29.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=16"><div id="sanpham_ten"><b>Tiếng Việt 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh16.png" width="100px" height="130px"><br></div><div id="sanpham_gia">38.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=17"><div id="sanpham_ten"><b>Toán 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh17.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">30.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=18"><div id="sanpham_ten"><b>Đạo Đức </b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh18.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">27.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=19"><div id="sanpham_ten"><b>Âm Nhạc 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh19.png" width="100px" height="130px"><br></div><div id="sanpham_gia">26.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=20"><div id="sanpham_ten"><b>Mỹ Thuật 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh20.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">32.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=21"><div id="sanpham_ten"><b>Tiếng Việt 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh21.png" width="100px" height="130px"><br></div><div id="sanpham_gia">43.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=22"><div id="sanpham_ten"><b>Toán 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh22.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">31.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=23"><div id="sanpham_ten"><b>Đạo Đức 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh23.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">22.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=24"><div id="sanpham_ten"><b>Âm Nhạc 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh24.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">28.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=25"><div id="sanpham_ten"><b>Mỹ Thuật 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh25.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">34.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=26"><div id="sanpham_ten"><b>Bài tập Âm nhạc 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/btan1.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">12.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=27"><div id="sanpham_ten"><b>Bài tập Đạo Đức 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/btdd1.png" width="100px" height="130px"><br></div><div id="sanpham_gia">15.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=28"><div id="sanpham_ten"><b>Bài tập Hoạt động trải nghiệm 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/bthdvtn1.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">23.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=29"><div id="sanpham_ten"><b>Bài tập Mĩ Thuật 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/btmt1.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">22.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=30"><div id="sanpham_ten"><b>Bài tập Toán 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/btt12.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=31"><div id="sanpham_ten"><b>Bài tập Tự Nhiên và Xã Hội 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/bttnvxh1.png" width="100px" height="130px"><br></div><div id="sanpham_gia">26.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=32"><div id="sanpham_ten"><b>Bài tập Tiếng Việt 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/bttv11.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">24.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=33"><div id="sanpham_ten"><b>Tự Nhiên và Xã Hội 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh26.png" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=34"><div id="sanpham_ten"><b>Giáo dục thể chất 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh27.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">24.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=35"><div id="sanpham_ten"><b>Hoạt động trải nghiệm 1</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh28.jpeg" width="100px" height="130px"><br></div><div id="sanpham_gia">16.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=36"><div id="sanpham_ten"><b>Bài tập Đạo Đức 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/btdd2.png" width="100px" height="130px"><br></div><div id="sanpham_gia">16.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=37"><div id="sanpham_ten"><b>Bài tập Hoạt động trải nghiệm 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/bthdvtn2.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">23.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=38"><div id="sanpham_ten"><b>Bài tập Tự Nhiên và Xã Hội 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/bttnvxh2.png" width="100px" height="130px"><br></div><div id="sanpham_gia">22.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=39"><div id="sanpham_ten"><b>Bài tập Toán 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/btt21.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">24.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=40"><div id="sanpham_ten"><b>Hoạt động trải nghiệm 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh29.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=41"><div id="sanpham_ten"><b>Bài tập Tiếng Việt 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/bttv21.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=42"><div id="sanpham_ten"><b>Tự Nhiên và Xã Hội 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh30.png" width="100px" height="130px"><br></div><div id="sanpham_gia">15.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=43"><div id="sanpham_ten"><b>Giáo dục thể chất 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh31.png" width="100px" height="130px"><br></div><div id="sanpham_gia">24.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=44"><div id="sanpham_ten"><b>Tiếng Anh 2</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh32.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">50.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=45"><div id="sanpham_ten"><b>Bài tập Âm nhạc 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/btan3.webp" width="100px" height="130px"><br></div><div id="sanpham_gia">16.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=46"><div id="sanpham_ten"><b>Bài tập Công nghệ 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/btcn3.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">17.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=47"><div id="sanpham_ten"><b>Bài tập Đạo Đức 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/btdd3.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">15.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=48"><div id="sanpham_ten"><b>Bài tập Hoạt động trải nghiệm 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/bthdvtn3.png" width="100px" height="130px"><br></div><div id="sanpham_gia">23.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=49"><div id="sanpham_ten"><b>Bài tập Tin học 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/btth3.png" width="100px" height="130px"><br></div><div id="sanpham_gia">23.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=50"><div id="sanpham_ten"><b>Bài tập Toán 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/btt31.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=51"><div id="sanpham_ten"><b>Bài tập Tự Nhiên và Xã Hội 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/bttnvxh3.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">26.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=52"><div id="sanpham_ten"><b>Bài tập Tiếng Việt 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/bttv31.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">23.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=53"><div id="sanpham_ten"><b>Công Nghệ 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh33.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=54"><div id="sanpham_ten"><b>Hoạt động trải nghiệm 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh34.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=55"><div id="sanpham_ten"><b>Giáo dục thể chất 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh35.png" width="100px" height="130px"><br></div><div id="sanpham_gia">16.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=56"><div id="sanpham_ten"><b>Tự Nhiên và Xã Hội 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh36.png" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=57"><div id="sanpham_ten"><b>Tin học 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh37.png" width="100px" height="130px"><br></div><div id="sanpham_gia">22.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=58"><div id="sanpham_ten"><b>Tiếng anh 3</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh38.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">36.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=59"><div id="sanpham_ten"><b>Bài tập Âm nhạc 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btan4.png" width="100px" height="130px"><br></div><div id="sanpham_gia">15.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=60"><div id="sanpham_ten"><b>Bài tập Công nghệ 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btcn4.png" width="100px" height="130px"><br></div><div id="sanpham_gia">23.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=61"><div id="sanpham_ten"><b>Bài tập Đạo Đức 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btdd4.webp" width="100px" height="130px"><br></div><div id="sanpham_gia">22.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=62"><div id="sanpham_ten"><b>Bài tập Khoa Học 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btkh4.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">24.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=63"><div id="sanpham_ten"><b>Bài tập Lịch Sử và Địa Lí 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btlsvdl4.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">26.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=64"><div id="sanpham_ten"><b>Bài tập Mĩ Thuật 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btmt4.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">17.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=65"><div id="sanpham_ten"><b>Bài tập Tin học 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btth4.png" width="100px" height="130px"><br></div><div id="sanpham_gia">22.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=66"><div id="sanpham_ten"><b>Bài tập Toán 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/btt41.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=67"><div id="sanpham_ten"><b>Tin học 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh39.png" width="100px" height="130px"><br></div><div id="sanpham_gia">15.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=68"><div id="sanpham_ten"><b>Bài tập Tiếng Việt 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/bttv41.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=69"><div id="sanpham_ten"><b>Khoa Học 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh40.png" width="100px" height="130px"><br></div><div id="sanpham_gia">26.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=70"><div id="sanpham_ten"><b>Tiếng anh 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh41.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">38.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=71"><div id="sanpham_ten"><b>Công Nghệ 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh42.png" width="100px" height="130px"><br></div><div id="sanpham_gia">22.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=72"><div id="sanpham_ten"><b>Lịch Sử và Địa Lí 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh43.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">24.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=73"><div id="sanpham_ten"><b>Tiếng Anh 4</b><br></div><div id="sanpham_hinh"><img src="./index_files/hinh44.webp" width="100px" height="130px"><br></div><div id="sanpham_gia">40.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=74"><div id="sanpham_ten"><b>Bài tập Công nghệ 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/btcn5.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">15.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=76"><div id="sanpham_ten"><b>Bài tập Lịch Sử và Địa Lí 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/btlsvdl5.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=77"><div id="sanpham_ten"><b>Bài tập Toán 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/btt51.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td></tr><tr><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=78"><div id="sanpham_ten"><b>Bài tập Tin học 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/btth5.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">16.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=79"><div id="sanpham_ten"><b>Bài tập Tiếng Việt 5</b><br></div><div id="sanpham_hinh"><img src="./index_files/btt51.jpg" width="100px" height="130px"><br></div><div id="sanpham_gia">25.000 VND</div></a></td><td id="sanpham" width="150px" margin-right="5px"><a href="http://localhost:81/BTLWebSach/index.php?ctsp&amp;idct=80"><div id="sanpham_ten"><b>Hoạt động trải nghiệm 51</b><br></div><div id="sanpham_hinh"><img src="./index_files/21017801_1719667031.png" width="100px" height="130px"><br></div><div id="sanpham_gia">22.001 VND</div></a></td></tr></tbody></table>
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index_files/style.css">
+    <style>
+        table {
+            display: ruby-text;
+        }
+    </style>
+
+
+    
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Trần Thái Bảo - Nguyễn Thị Cẩm Nhung</p>
+        </footer>
+    </div>
+                
+
+
+
+
+
+
+</body></html>
